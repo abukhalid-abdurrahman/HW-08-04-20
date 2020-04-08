@@ -19,9 +19,23 @@ namespace Day_9
 
         public static int Push(ref string[] array, string element)
         {
-            Array.Resize(ref array, array.Length + 1);
-            array[array.Length - 1] = element;
+            if(array != null)
+            {
+                Array.Resize(ref array, array.Length + 1);
+                array[array.Length - 1] = element;
+            }
             return array.Length;
+        }
+
+        public static string Shift(ref string[] array)
+        {
+            string results = string.Empty;
+            if(array != null)
+            {
+                results = array[0];
+                array = array.Skip(1).ToArray();
+            }
+            return results;
         }
 
         public static void Output(object[] array)

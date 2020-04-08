@@ -18,6 +18,9 @@ namespace Day_9
             string shiftStr = ArrayHelper.Shift(ref arrStr);
             Console.WriteLine("Deleted (shift method): " + shiftStr);
             ArrayHelper.Output(arrStr);
+            int unShiftSize = ArrayHelper.UnShift(ref arrStr, "Avaz");
+            Console.WriteLine("New Size (after UnShift method): " + unShiftSize);
+            ArrayHelper.Output(arrStr);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Day_9
 {
     public class ArrayHelper
     {
-        public static string Pop<T>(ref T[] array)
+        public static string Pop(ref string[] array)
         {
             int endIndex = array.Length - 1;
             string results = string.Empty;
@@ -15,6 +15,13 @@ namespace Day_9
                 Array.Resize(ref array, array.Length - 1);
             }
             return results;
+        }
+
+        public static int Push(ref string[] array, string element)
+        {
+            Array.Resize(ref array, array.Length + 1);
+            array[array.Length - 1] = element;
+            return array.Length;
         }
 
         public static void Output(object[] array)
